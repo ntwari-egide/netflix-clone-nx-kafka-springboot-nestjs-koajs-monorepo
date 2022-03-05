@@ -1,0 +1,62 @@
+{
+  "root": "apps/videos-qualities-module-springboot",
+  "sourceRoot": "apps/videos-qualities-module-springboot/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    },
+    "format": {
+      "executor": "@nxrocks/nx-spring-boot:format",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    },
+    "format-check": {
+      "executor": "@nxrocks/nx-spring-boot:format-check",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    },
+    "buildImage": {
+      "executor": "@nxrocks/nx-spring-boot:buildImage",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    },
+    "buildInfo": {
+      "executor": "@nxrocks/nx-spring-boot:buildInfo",
+      "options": {
+        "root": "apps/videos-qualities-module-springboot"
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,52 @@
+{
+  "root": "apps/subscription-plans-module--nestjs",
+  "sourceRoot": "apps/subscription-plans-module--nestjs/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/subscription-plans-module--nestjs",
+        "main": "apps/subscription-plans-module--nestjs/src/main.ts",
+        "tsConfig": "apps/subscription-plans-module--nestjs/tsconfig.app.json",
+        "assets": ["apps/subscription-plans-module--nestjs/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/subscription-plans-module--nestjs/src/environments/environment.ts",
+              "with": "apps/subscription-plans-module--nestjs/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "subscription-plans-module--nestjs:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/subscription-plans-module--nestjs/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/subscription-plans-module--nestjs"],
+      "options": {
+        "jestConfig": "apps/subscription-plans-module--nestjs/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

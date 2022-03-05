@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "subscription-plans-module--nestjs": "apps/subscription-plans-module--nestjs",
+    "users-payments-module-koajs": "apps/users-payments-module-koajs",
+    "videos-module--nestjs": "apps/videos-module--nestjs",
+    "videos-qualities-module-springboot": "apps/videos-qualities-module-springboot"
+  }
+}

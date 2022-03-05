@@ -1,0 +1,52 @@
+{
+  "root": "apps/videos-module--nestjs",
+  "sourceRoot": "apps/videos-module--nestjs/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/videos-module--nestjs",
+        "main": "apps/videos-module--nestjs/src/main.ts",
+        "tsConfig": "apps/videos-module--nestjs/tsconfig.app.json",
+        "assets": ["apps/videos-module--nestjs/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/videos-module--nestjs/src/environments/environment.ts",
+              "with": "apps/videos-module--nestjs/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "videos-module--nestjs:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/videos-module--nestjs/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/videos-module--nestjs"],
+      "options": {
+        "jestConfig": "apps/videos-module--nestjs/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

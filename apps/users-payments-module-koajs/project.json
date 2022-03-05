@@ -1,0 +1,52 @@
+{
+  "root": "apps/users-payments-module-koajs",
+  "sourceRoot": "apps/users-payments-module-koajs/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/users-payments-module-koajs",
+        "main": "apps/users-payments-module-koajs/src/main.ts",
+        "tsConfig": "apps/users-payments-module-koajs/tsconfig.app.json",
+        "assets": ["apps/users-payments-module-koajs/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/users-payments-module-koajs/src/environments/environment.ts",
+              "with": "apps/users-payments-module-koajs/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "users-payments-module-koajs:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/users-payments-module-koajs/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/users-payments-module-koajs"],
+      "options": {
+        "jestConfig": "apps/users-payments-module-koajs/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
